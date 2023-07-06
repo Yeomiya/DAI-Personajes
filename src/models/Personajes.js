@@ -1,6 +1,6 @@
 class Personaje {
-    id;
-    imagen;
+    idPersonaje;
+    foto;
     nombre;
     edad;
     peso;

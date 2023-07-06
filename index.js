@@ -1,5 +1,6 @@
 import express from "express";
 import CRUDPJS from "./src/Services/ServicePersonajes.js"
+import CRUDSeries from "./src/Services/ServiceSeries.js";
 import sql from 'mssql'
 
 const app = express();
@@ -16,9 +17,7 @@ app.use(express.json());
   }
 }); */
 
-
-
-async function getAll(){
+async function getPjs(){
   let svc = new CRUDPJS();
   let data
   data = await svc.get();
@@ -26,17 +25,29 @@ async function getAll(){
   return JSON.stringify(data)
 }
 
-/* db.connect((err) => {
-  if (err) {
-    console.error('Error al conectar con la base de datos: ', err);
-  } else {
-    console.log('Conexión exitosa a la base de datos');
-  }
-}); */
+async function getSeries(){
+  let svc = new CRUDSeries();
+  let data
+  data = await svc.get();
+  console.log(data);
+  return JSON.stringify(data)
+}
 
-app.get('/characters', async function(req, res) {
-  res.send(await getAll())
-});
+async function getByIdPjs(id){
+  let svc = new CRUDPJS();
+  let data
+  data = await svc.get();
+  console.log(data);
+  return JSON.stringify(data)
+}
+
+async function getByIdSeries(id){
+  let svc = new CRUDPJS();
+  let data
+  data = await svc.get();
+  console.log(data);
+  return JSON.stringify(data)
+}
 
 /* app.post('/characters', (req, res) => {
     const { Foto, Nombre, Edad, Peso, Historia } = req.body;

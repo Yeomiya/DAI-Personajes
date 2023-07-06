@@ -1,9 +1,9 @@
-class Peli_Serie {
+class Series {
     id;
-    imagen;
-    titulo;
-    fecha_creacion;
-    calificacion;
+    foto;
+    titulos;
+    fecha;
+    clasificacion;
 }
 
-export default Peli_Serie;
+export default Series;
